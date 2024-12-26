@@ -18,10 +18,10 @@ var ProfolioDB = DB.create(__dirname+"/profolio.db");
 var ContactDB = DB.create(__dirname+"/contact.db");
  
 
- /*ProfolioDB.insert([
+ ProfolioDB.insert([
     {
-        name: "Coffee Website",
-        description: "Short description of the project that was carried out in this portfolio.",
+        name: "貓",
+        description: "以色鉛筆細膩的筆觸展現貓的真實質感與神韻，強調毛髮的層次感和光影的變化，捕捉其靈動的眼神，展現生命力與溫暖感。透過柔和的色彩疊加，呈現貓的自然美，傳遞對動物純真的熱愛與尊重，同時讓觀者感受到貓咪帶來的療癒力量。",
         image: "assets/img/3.jpg",
         link: "#",
         skills: [
@@ -63,8 +63,8 @@ var ContactDB = DB.create(__dirname+"/contact.db");
         ]
       },
       {
-        name: "Construction Landing Page",
-        description: "Short description of the project that was carried out in this portfolio.",
+        name: "點線面海報設計",
+        description: "這張海報以點、線、面為主要設計元素，營造出獨特的視覺效果，展現了細膩的空間層次感與建築細節。設計中透過黑白對比與幾何圖案，突出建築與人物的關係，創造出懷舊與現代交融的氛圍，吸引觀者的注意。",
         image: "assets/img/17.jpg",
         link: "#",
         skills: [
