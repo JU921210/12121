@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== FAVICON ===============-->
+      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="assets/css/styles.css">
+      <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <title>Responsive portfolio website - Bedimcode</title>
+   </head>
+   <style>
+     @media (min-width: 500px) and (max-width: 768px) {
+
+  .gallery img {
+   max-width: 25%; 
+   max-height: 25%;
+  }
+}
+ 
+@media (min-width: 768px) and (max-width: 1024px) {
+ 
+  .gallery img {
+   max-width: 15%; 
+   max-height: 15%;
+  }
+}
+@media (min-width: 1024px) {
+    .gallery img {
+        max-width: 50%; 
+        max-height: 50%;
+    }
+    
+}
+   </style>
+   <body>
+      <div class="gallery">
+         <div class="img">
+            <img src="/assets/img/17.jpg" alt="" />
+         </div>
+
+         <div class="img">
+            <img src="/assets/img/2.jpg" alt="" />
+         </div>
+
+         <div class="img">
+            <img src="/assets/img/3.jpg" alt="" />
+         </div>
+
+         <div class="img">
+            <img src="/assets/img/4.jpg" alt="" />
+         </div>
+
+         <div class="img">
+            <img src="/assets/img/5.jpg" alt="" />
+         </div>
+
+         <div class="img">
+            <img src="/assets/img/6.jpg" alt="" />
+         </div>
+
+         <div class="img">
+            <img src="/assets/img/7.jpg" alt="" />
+         </div>
+
+         <div class="img">
+            <img src="/assets/img/8.jpg" alt="" />
+         </div>
+
+         <div class="img">
+            <img src="/assets/img/9.jpg" alt="" />
+         </div>
+
+         <div class="img">
+            <img src="/assets/img/10.jpg" alt="" />
+         </div>
+
+         <div class="img">
+            <img src="/assets/img/16.jpg" alt="" />
+         </div>
+
+
+
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+      <script>
+         const positions = 
+         [
+            {top: "0%", left: "0%" },
+            {top: "0%", left: "30%" },
+            {top: "0%", left: "60%" },
+            {top: "16%", left: "15%" },
+            {top: "16%", left: "45%" },
+            {top: "16%", left: "80%" },
+            {top: "32%", left: "50%" },
+            {top: "32%", left: "75%" },
+            {top: "48%", left: "0%" },
+            {top: "64%", left: "30%" },
+            {top: "64%", left: "60%" },
+            {top: "64%", left: "90%" },
+            {top: "80%", left: "20%" },
+            {top: "80%", left: "70%" },
+         ];
+         
+         const imgs = document.querySelectorAll(".img");
+         
+         gsap.set(".img", {
+            top: "45%",
+            left: "50%",
+            transform: "translate(-50%, -50%) scale(0)",
+         });
+
+         gsap.from("p", {
+            y: 40,
+            ease: "power4.inOut",
+            duration: 1,
+            stragger: {
+               count:0.15,
+            },
+            delay: 0.5
+         });
+
+         gsap.to(".img",{
+            scale:1,
+            width:"400px",
+            height:"500px",
+            stagger:0.15,
+            duration:0.75,
+            ease:"power2.out",
+            delay: 1,
+            onComplete: scatterAndShrink,
+            });
+
+         gsap.to("p", {
+            top:"40px",
+            ease: "power4.inOut",
+            duration:1,
+            stagger: {
+               amount: 0.15,
+            },
+            delay:3,
+            onComplete: () => {
+               document.querySelector(".header").remove();
+            },
+         });
+
+         gsap.from("a", {
+            y:20,
+            opacity: 0,
+            ease: "power2.out",
+            duration: 1,
+            stagger: {
+               amount: 0.15,
+            },
+            delay: 4,
+         });
+
+         function scatterAndShrink() {
+            gsap.to(".img",{
+               top: (i) => positions[i].top,
+               left: (i) => positions[i].left,
+               transform: "none",
+               width: "450px",
+               height: "450px",
+               stagger: 0.075,
+               duration: 0.75,
+               ease:"powerr2.out",
+            });
+         }
+      </script>
+      <!--==================== NAV ====================-->
+      <nav class="nav">
+         <ul class="nav__list">
+            <li>
+            <a href="#home" title="Home" class="nav__link active-link">
+               <i class="ri-home-line"></i>
+            </a>
+            </li>
+
+            <li>
+            <a href="#projects" title="Project" class="nav__link">
+               <i class="ri-folder-line"></i>
+            </a>
+            </li>
+
+            <li>
+            <a href="#services" title="Services" class="nav__link">
+               <i class="ri-file-edit-line"></i>
+            </a>
+            </li>
+
+            <li>
+            <a href="#experience" title="Experience" class="nav__link">
+               <i class="ri-honour-line"></i>
+            </a>
+            </li>
+
+            <li>
+               <a href="#contact" title="" class="nav__link">
+                  <i class="ri-send-plane-line"></i>
+               </a>
+            </li>
+         </ul>
+         
+      </nav>
+
+      <!--==================== MAIN ====================-->
+      <main class="main">
+         <!--==================== HOME ====================-->
+         <section class="home__section" id="home">
+            <div class="home__container container grid">
+               <!--===== PERFIL =====-->
+               <div class="perfil">
+                  <img src="assets/img/20210101_215647.jpg" alt="image" class="perfil__img">
+
+                  <div class="perfil__data">
+                     <h1 class="perfil__name">Chen <br> JU</h1>
+
+                     <div class="perfil__buttons">
+                        <a href="#projects" class="button">Projects</a>
+                        <a href="#services" class="button button__black">Services</a>
+                     </div>
+                  </div>
+               </div>
+
+               <!--===== INFO =====-->
+               <div class="Info">
+                  <div class="Info__data">
+                     <h1 class="Info__name">Chen JU</h1>
+                  </div>
+
+                  <div class="Info__iamge">
+                     <img src="assets/img/20210101_215647.jpg" alt="image" class="Info__img">
+                  </div>
+
+                  <p class="Info__description">
+                     
+                  </p>
+
+                  <a href="" download target="_blank" class="button button__black">Download CV</a>
+               </div>
+
+               <!--===== ABOUT =====-->
+               <div class="about">
+                  <h3 class="about__name">
+                     Chen JU - <b>網頁設計者 & 作品集</b>
+                  </h3>
+
+                  <p class="about__description">
+                     當我在追尋著我的夢想時，每一天都是繽紛的，因為我知道每個小時都是在實現夢想的一部分。
+                  </p>
+
+                  <div class="about__social">
+                     <a href="https://www.linkedin.com/" target="_blank" class="about__link">
+                        <i class="ri-linkedin-box-line"></i>
+                     </a>
+
+                     <a href="https://github.com/" target="_blank" class="about__link">
+                        <i class="ri-github-line"></i>
+                     </a>
+
+                     <a href="https://www.behance.net/" target="_blank" class="about__link">
+                        <i class="ri-behance-line"></i>
+                     </a>
+                  </div>
+
+                  <div class="about__image">
+                     <img src="assets/img/20210101_215647.jpg" alt="image" class="about__img">
+                  </div>
+
+                  <p class="about__note">
+                    
+                  </p>
+
+                  <a href="#contact" class="button">Contact Me</a>
+               </div>
+
+               <!--===== SKILLS =====-->
+               <div class="skills">
+                  <h2 class="skills__title">擅長程式</h2>
+
+                  <div class="skills__items">
+                     <img src="assets/img/ps.png" alt="image" class="skills__item">
+                     <img src="assets/img/PR.png" alt="image" class="skills__item">
+                     <img src="assets/img/PT.png" alt="image" class="skills__item">
+                     <img src="assets/img/AI.png" alt="image" class="skills__item">
+                     <img src="assets/img/ACID.png" alt="image" class="skills__item">
+                     <img src="assets/img/skills-github.svg" alt="image" class="skills__item">
+                     <img src="assets/img/ID.png" alt="image" class="skills__item">
+                     <img src="assets/img/skills-tailwind-css.svg" alt="image" class="skills__item">
+                     <img src="assets/img/skills-figma.svg" alt="image" class="skills__item">
+                     <img src="assets/img/MYAY.png" alt="image" class="skills__item">
+                  </div>
+
+                  <p class="skills__description">
+                     
+                  </p>
+               </div>
+            </div>
+         </section>
+
+         <!--==================== PROJECTS ====================-->
+         <section class="projects section" id="projects">
+            <h2 class="section__title">Portfolio</h2>
+        
+            <div class="projects__container container grid">
+              <article
+                v-for="(project, index) in projects"
+                :key="index"
+                class="projects__card"
+              >
+                <a :href="project.link" target="_blank" class="projects__image">
+                  <img :src="project.image" :alt="project.name" class="projects__img" />
+                </a>
+        
+                <div class="projects__data">
+                  <h3 class="projects__name">{{ project.name }}</h3>
+                  <p class="projects__description">
+                    {{ project.description }}
+                  </p>
+        
+                  <div class="projects__skills">
+                    <img
+                      v-for="(skill, skillIndex) in project.skills"
+                      :key="skillIndex"
+                      :src="skill"
+                      :alt="`Skill ${skillIndex + 1}`"
+                      class="projects__skills"
+                    />
+                  </div>
+        
+                  <a
+                    :href="project.link"
+                    target="_blank"
+                    class="projects__button"
+                  >
+                    <i class="ri-link"></i>
+                    <span>Visit Project</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+         <!--==================== SERVICES ====================-->
+         <section class="services section" id="services">
+            <h2 class="section__title">SERVICES I OFFER</h2>
+
+            <div class="services__container container grid">
+               <article class="services__card">
+                  <div class="services__icon">
+                     <div class="services__circle"></div>
+                     <i class="ri-code-box-line"></i>
+                  </div>
+
+                  <h3 class="services__name">手繪</h3>
+                  <p class="services__description">
+                     透過鉛筆、麥克筆、色鉛筆等媒材表現創意。注重細節與構圖，將情感與靈感融入作品中，讓每一幅畫作都充滿個人特色與生命力。
+                  </p>
+               </article>
+
+               <article class="services__card">
+                  <div class="services__icon">
+                     <div class="services__circle"></div>
+                     <i class="ri-pen-nib-line"></i>
+                  </div>
+
+                  <h3 class="services__name">電繪</h3>
+                  <p class="services__description">
+                     擅長角色設計、插畫及場景創作，熟悉繪圖軟體如Photoshop，能結合創意與技術，創造細緻且富有故事性的作品，呈現最佳視覺效果。
+                  </p>
+               </article>
+
+               <article class="services__card">
+                  <div class="services__icon">
+                     <div class="services__circle"></div>
+                     <i class="ri-seo-line"></i>
+                  </div>
+
+                  <h3 class="services__name">手作</h3>
+                  <p class="services__description">
+                     我熱愛手作創作，喜歡編織、繪製球鞋等多元材質設計手工製品，從無到有的過程充滿成就感。致力於打造兼具實用性與美感的作品。
+                  </p>
+               </article>
+            </div>
+         </section>
+
+         <!--==================== EXPERIENCE ====================-->
+         <section class="experience section" id="experience">
+            <h2 class="section__title">Competition Experience</h2>
+
+            <div class="experience__container container grid">
+               <article class="experience__card">
+                  <h2 class="experience__company">桃園設計獎</h2>
+
+                  <div class="experience__data">
+                     <h3 class="experience__profession">平面設計組 金獎</h3>
+                     <span class="experience__date">2021/4/25</span>
+                     <p class="experience__desrciption">
+                        過程中不僅提升了創作能力還提升了團隊合作的技巧，累積了豐富的經驗，使我開拓視野，也更加了解自己的潛力與努力方向。
+                     </p>
+                  </div>
+               </article>
+
+               <article class="experience__card">
+                  <h2 class="experience__company">韓國設計獎 </h2>
+
+                  <div class="experience__data">
+                     <h3 class="experience__profession">平面設計組-入圍</h3>
+                     <span class="experience__date">2022/1/20</span>
+                     <p class="experience__desrciption">
+                        藉由這次經驗了解除了奮發圖強的精神，若沒有理性的分析自己的優劣勢，仍然無法使自身的能力與日俱進。
+                     </p>
+                  </div>
+               </article>
+
+               <article class="experience__card">
+                  <h2 class="experience__company">全國創遊翻轉嘉年華</h2>
+
+                  <div class="experience__data">
+                     <h3 class="experience__profession">特優</h3>
+                     <span class="experience__date">2021/9/30</span>
+                     <p class="experience__desrciption">
+                        參加競賽的過程中，學習到了許
+                        多創作能力累積了很多實務經驗，與
+                        全國的選手們競爭，領悟到了人外有
+                        人、天外有天，也展開自己的眼界
+                     </p>
+                  </div>
+               </article>
+            </div>
+         </section>
+
+         <!--==================== CONTACT ====================-->
+         <section class="contact section" id="contact">
+            <h2 class="section__title">CONTACT ME</h2>
+
+            <div class="contact__container container grid"></div>
+             <form action="" class="contact__form grid" id="contact--form">
+               <div class="contact__group grid">
+                  <input type="text" name="user_name" placeholder="Names" required class="contact__input">
+                  <input type="text" name="user_email" placeholder="Email" required class="contact__input">
+               </div>
+
+               <textarea name="user_message" placeholder="Message" class="contact__input contact__area"></textarea>
+
+               <button type="submit" class="button contact__button">Send Message</button>
+
+               <p class="contact__message" id="contact-message"></p>
+             </form>
+         </section>
+      </main>
+
+      <!--==================== FOOTER ====================-->
+      <footer class="footer">
+         <div class="footer__container container grid">
+            <div class="footer__content grid">
+               <a href="#" class="footer__logo">Xian</a>
+
+               <ul class="footer__links">
+                  <li>
+                     <a href="#home" class="footer__link">Home</a>
+                  </li>
+
+                  <li>
+                     <a href="#projects" class="footer__link">Projects</a>
+                  </li>
+
+                  <li>
+                     <a href="#services" class="footer__link">Services</a>
+                  </li>
+               </ul>
+            </div>
+
+            <div class="footer__social">
+               <a href="https://reurl.cc/d1yEqD/" target="_blank" class="footer__social-link">
+                  <i class="ri-facebook-circle-line"></i>
+               </a>
+
+               <a href="https://reurl.cc/G5p9Gv/" target="_blank" class="footer__social-link">
+                  <i class="ri-instagram-line"></i>
+               </a>
+
+               <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                  <i class="ri-twitter-x-line"></i>
+               </a>
+            </div>
+         </div>
+
+         <span class="footer__copy">
+            &#169; All Rights Reserved By Bedimcode
+         </span>
+      </footer>
+
+      <!--========== SCROLL UP ==========-->
+      <a href="#" class="scrollup" id="scroll-up">
+         <i class="ri-arrow-up-line"></i>
+      </a>
+
+
+      <!--=============== SCROLLREVEAL ===============-->
+      <script src="assets/js/scrollreveal.min.js"></script>
+
+      <!--=============== EMAIL JS ===============-->
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script src="vue.js" ></script>
+   </body>
+</html>
