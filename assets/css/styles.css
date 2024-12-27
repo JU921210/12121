@@ -137,7 +137,7 @@ img {
 }
 
 .main {
-  overflow: hidden;  /* 隱藏超出的內容 */
+  overflow: hidden;  /* 隱藏超出範圍的內容 */
   margin-top: 50%;  /* 顯示位置調整 */
 }
 
@@ -754,11 +754,11 @@ img {
   bottom:8rem;  /* 顯示滑到頂部按鈕時的底部位置 */
 }
 
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
+/* =============== 螢幕寬度小於 320px =============== */
+
 @media screen and (max-width: 320px){
   .main {
-    overflow: hidden;  /* 隱藏溢出的內容 */
+    overflow: hidden;  /* 隱藏超出範圍的內容*/
     margin-top: 50%;  /* 上邊距設定為 50% */
   }
 
@@ -778,7 +778,7 @@ img {
 @media screen and (min-width: 540px)
 {
   .main {
-    overflow: hidden;  /* 隱藏溢出的內容 */
+    overflow: hidden;  /* 隱藏超出範圍的內容 */
     margin-top: 50%;  /* 上邊距設定為 50% */
   }
 
@@ -805,7 +805,7 @@ img {
 @media screen and (min-width: 768px)
 {
   .main {
-    overflow: hidden;  /* 隱藏溢出的內容 */
+    overflow: hidden;  /* 隱藏超出範圍的內容 */
     margin-top: 80%;  /* 上邊距設定為 80% */
   }
 
@@ -859,11 +859,13 @@ img {
   }
 }
   
+/* =============== 針對螢幕寬度小於 1200px =============== */
+
 /* For large devices */
 @media screen and (min-width: 1200px)
 {
   .main {
-    overflow: hidden;  /* 隱藏溢出的內容 */
+    overflow: hidden;  /* 隱藏超出範圍的內容 */
     margin-top: 55%;  /* 上邊距設為 55% */
   }
 
@@ -999,60 +1001,62 @@ img {
 
   .experience__data
   {
-    padding: 2rem;
-    border-radius: 2rem;
+    padding: 2rem;   /* 設置內邊距為 2rem */
+    border-radius: 2rem;   /* 設置圓角為 2rem */
   }
 
   .contact__container
   {
-    grid-template-columns: 620px;
+    grid-template-columns: 620px;   /* 使用 Grid 佈局，設定單欄寬度為 620px */
   }
 
   .contact__group
   {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);   /* 使用 Grid 佈局，分成兩欄，欄寬等分 */
   }
 
   .contact__area
   {
-    height: 15rem;
+    height: 15rem;   /* 設置高度為 15rem */
   }
 
   .contact__button
   {
-    width: max-content;
-    justify-self: center;
+    width: max-content;   /* 自動適配內容寬度 */
+    justify-self: center;   /* 按鈕置中 */
   }
 
   .footer
   {
-    padding-top: 3rem;
+    padding-top: 3rem;   /* 設置上內邊距為 3rem */
   }
 
   .footer__links
   {
-    column-gap: 3rem;
+    column-gap: 3rem;   /* 設置連結之間的水平間距為 3rem */
   }
 
   .footer__copy
   {
-    margin-top: 7rem;
+    margin-top: 7rem;   /* 設置頂部邊距為 7rem */
   }
 }
+
+/* ===============螢幕寬度小於 1500px =============== */
 
 @media screen and (max-width: 1500px)
 {
   .main {
-    overflow: hidden;
-    margin-top: 50%;
+    overflow: hidden;     /* 隱藏超出範圍的內容 */
+    margin-top: 50%;     /* 設置頂部邊距為 50% */
   }
 
   .nav
   {
-    width: max-content;
+    width: max-content;   /* 自動調整寬高以適配內容 */
     height: max-content;
-    padding: 2rem 1rem;
-    left: initial;
+    padding: 2rem 1rem;  /* 設置上下內邊距 2rem，左右 1rem */
+    left: initial;  /* 固定導航欄位置在右側，距離右側 3rem */
     right: 3rem;
     top: 0;
     bottom: 0;
@@ -1061,58 +1065,60 @@ img {
 
   .nav__list
   {
-    flex-direction: column;
-    row-gap: 1.25rem;
+    flex-direction: column;   /* 將導航列改為垂直排列 */
+    row-gap: 1.25rem;   /* 設置垂直間距為 1.25rem */
   }
 
   .footer
   {
-    padding-block: 3rem;
+    padding-block: 3rem;   /* 上下內邊距設為 3rem */
   }
 
   .scrollup
   {
-    right: 4rem;
+    right: 4rem;   /* 向右偏移距離為 4rem */
   }
 }
 
 .gallary
 {
-  width: 100%;
-  height: calc(100vh - 60px);
-  position: relative;
+  width: 100%;   /* 設置寬度為 100% */
+  height: calc(100vh - 60px);   /* 設置高度為螢幕高度減去 60px */
+  position: relative;   /* 設置相對定位 */
 }
 
 .img
 {
-  width: 75px;
+  width: 75px;   /* 設置圖片容器寬度為 75px，高度為 100px */
   height: 100px;
-  overflow: hidden;
-  position: absolute;
-  margin: 10px;
+  overflow: hidden;  /* 隱藏超出範圍的內容 */
+  position: absolute;   /* 設置絕對定位 */
+  margin: 10px;   /* 設置邊距為 10px */
   
 }
 
 .img img
 {
-  width: 100%;
+  width: 100%;   /* 圖片寬高設定為父容器的 100% */
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;   /* 保持圖片比例裁切 */
 }
+
+/* =============== 小於 768px 的螢幕 =============== */
 
 @media (max-width: 768px){
   .main 
   {
-    overflow: hidden;
-    margin-top: 215%;
+    overflow: hidden;    /* 隱藏超出範圍的內容 */
+    margin-top: 215%;    /* 設置頂部邊距為 215% */
   }
 
   .img img
   {
-  width: 200px;
+  width: 200px;   /* 調整圖片大小為 200px */
   height: 200px;
-  object-fit: cover;
-  display: block;
+  object-fit: cover;   /* 保持圖片比例裁切 */
+  display: block;   /* 改為塊級元素顯示，並使用 Flexbox 排列 */
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -1120,17 +1126,17 @@ img {
 
   .img
   {
-  width: 75px;
+  width: 75px;   /* 圖片容器寬高保持為 75px 和 100px */
   height: 100px;
-  overflow: hidden;
+  overflow: hidden;   /* 隱藏超出範圍的內容 */
   position: absolute;
   margin: 10px;
   }
 
   .gallary
 {
-  width: 100%;
-  height: calc(100vh - 60px);
+  width: 100%;   /* 設置寬度為 100% */
+  height: calc(100vh - 60px);   /* 設置高度為螢幕高度減去 60px */
   position: relative;
 }
 }
