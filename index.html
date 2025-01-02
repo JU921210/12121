@@ -14,10 +14,11 @@
       <link rel="stylesheet" href="assets/css/styles.css">
       <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-      <title>Responsive portfolio website - Bedimcode</title>
+      <title> Chen JU </title> <!-- 網頁標題 -->
+       
    </head>
    <style>
-     @media (min-width: 500px) and (max-width: 768px) {
+     @media (min-width: 500px) and (max-width: 768px) {  /* 螢幕寬度 */
 
   .gallery img {
    max-width: 25%; 
@@ -25,14 +26,14 @@
   }
 }
  
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {  /* 螢幕寬度 */
  
   .gallery img {
    max-width: 15%; 
    max-height: 15%;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1024px) {  /* 螢幕寬度 */
     .gallery img {
         max-width: 50%; 
         max-height: 50%;
@@ -114,18 +115,22 @@
          gsap.set(".img", {
             top: "45%",
             left: "50%",
-            transform: "translate(-50%, -50%) scale(0)",
+            transform: "translate(-50%, -50%) scale(0)",  // 將圖片縮到 0 並置中
          });
+
+         //添加進入動畫
 
          gsap.from("p", {
             y: 40,
             ease: "power4.inOut",
-            duration: 1,
+            duration: 1,  // 動畫
             stragger: {
-               count:0.15,
+               count:0.15,  // 間隔時間
             },
             delay: 0.5
          });
+
+         
 
          gsap.to(".img",{
             scale:1,
@@ -137,6 +142,8 @@
             delay: 1,
             onComplete: scatterAndShrink,
             });
+
+            // 為p加新的動畫
 
          gsap.to("p", {
             top:"40px",
@@ -162,6 +169,8 @@
             delay: 4,
          });
 
+         // 定義 scatterAndShrink 函數，散佈圖片和縮小尺寸
+
          function scatterAndShrink() {
             gsap.to(".img",{
                top: (i) => positions[i].top,
@@ -177,32 +186,32 @@
       </script>
       <!--==================== NAV ====================-->
       <nav class="nav">
-         <ul class="nav__list">
+         <ul class="nav__list">  <!-- 首頁 -->
             <li>
             <a href="#home" title="Home" class="nav__link active-link">
                <i class="ri-home-line"></i>
             </a>
             </li>
 
-            <li>
+            <li>   <!-- 專案 -->
             <a href="#projects" title="Project" class="nav__link">
                <i class="ri-folder-line"></i>
             </a>
             </li>
 
-            <li>
+            <li>  <!-- 服務 -->
             <a href="#services" title="Services" class="nav__link">
                <i class="ri-file-edit-line"></i>
             </a>
             </li>
 
-            <li>
+            <li>   <!-- 經驗 -->
             <a href="#experience" title="Experience" class="nav__link">
                <i class="ri-honour-line"></i>
             </a>
             </li>
 
-            <li>
+            <li>  <!-- 聯絡 -->
                <a href="#contact" title="" class="nav__link">
                   <i class="ri-send-plane-line"></i>
                </a>
@@ -213,24 +222,24 @@
 
       <!--==================== MAIN ====================-->
       <main class="main">
-         <!--==================== HOME ====================-->
+         <!--==================== 首頁 ====================-->
          <section class="home__section" id="home">
             <div class="home__container container grid">
-               <!--===== PERFIL =====-->
-               <div class="perfil">
+               <!--===== 個人檔案 =====-->
+               <div class="perfil">  <!-- 照片 -->
                   <img src="assets/img/20210101_215647.jpg" alt="image" class="perfil__img">
 
-                  <div class="perfil__data">
+                  <div class="perfil__data">  <!-- 姓名 -->
                      <h1 class="perfil__name">Chen <br> JU</h1>
 
-                     <div class="perfil__buttons">
+                     <div class="perfil__buttons">  <!-- 按鈕 -->
                         <a href="#projects" class="button">Projects</a>
                         <a href="#services" class="button button__black">Services</a>
                      </div>
                   </div>
                </div>
 
-               <!--===== INFO =====-->
+               <!--===== 個人資訊 =====-->
                <div class="Info">
                   <div class="Info__data">
                      <h1 class="Info__name">Chen JU</h1>
@@ -245,7 +254,7 @@
                   </p>
 
                   <a href="" download target="_blank" class="button button__black">Download CV</a>
-               </div>
+               </div>   <!-- 下載履歷表 -->
 
                <!--===== ABOUT =====-->
                <div class="about">
@@ -253,11 +262,11 @@
                      Chen JU - <b>網頁設計者 & 作品集</b>
                   </h3>
 
-                  <p class="about__description">
+                  <p class="about__description">  <!-- 簡介 -->
                      當我在追尋著我的夢想時，每一天都是繽紛的，因為我知道每個小時都是在實現夢想的一部分。
                   </p>
 
-                  <div class="about__social">
+                  <div class="about__social">   <!-- 社交媒體連結 -->
                      <a href="https://www.linkedin.com/" target="_blank" class="about__link">
                         <i class="ri-linkedin-box-line"></i>
                      </a>
@@ -280,7 +289,7 @@
                   </p>
 
                   <a href="#contact" class="button">Contact Me</a>
-               </div>
+               </div>  <!-- 聯絡按鈕 -->
 
                <!--===== SKILLS =====-->
                <div class="skills">
@@ -308,9 +317,9 @@
 
          <!--==================== PROJECTS ====================-->
          <section class="projects section" id="projects">
-            <h2 class="section__title">Portfolio</h2>
+            <h2 class="section__title">Portfolio</h2> <!-- 標題 -->
         
-            <div class="projects__container container grid">
+            <div class="projects__container container grid">   <!-- 使用 Vue.js 動態生成 -->
               <article
                 v-for="(project, index) in projects"
                 :key="index"
@@ -318,15 +327,15 @@
               >
                 <a :href="project.link" target="_blank" class="projects__image">
                   <img :src="project.image" :alt="project.name" class="projects__img" />
-                </a>
+                </a>   <!-- 專案和圖片 -->
         
                 <div class="projects__data">
                   <h3 class="projects__name">{{ project.name }}</h3>
                   <p class="projects__description">
-                    {{ project.description }}
+                    {{ project.description }}   <!-- 描述 -->
                   </p>
         
-                  <div class="projects__skills">
+                  <div class="projects__skills">  <!-- 技能 -->
                     <img
                       v-for="(skill, skillIndex) in project.skills"
                       :key="skillIndex"
@@ -335,7 +344,7 @@
                       class="projects__skills"
                     />
                   </div>
-        
+                       <!-- 專案連結按鈕 -->
                   <a
                     :href="project.link"
                     target="_blank"
@@ -351,7 +360,7 @@
 
          <!--==================== SERVICES ====================-->
          <section class="services section" id="services">
-            <h2 class="section__title">SERVICES I OFFER</h2>
+            <h2 class="section__title">SERVICES I OFFER</h2> <!-- 標題 -->
 
             <div class="services__container container grid">
                <article class="services__card">
@@ -394,7 +403,7 @@
 
          <!--==================== EXPERIENCE ====================-->
          <section class="experience section" id="experience">
-            <h2 class="section__title">Competition Experience</h2>
+            <h2 class="section__title">Competition Experience</h2> <!-- 標題 -->
 
             <div class="experience__container container grid">
                <article class="experience__card">
@@ -442,16 +451,16 @@
          <section class="contact section" id="contact">
             <h2 class="section__title">CONTACT ME</h2>
 
-            <div class="contact__container container grid"></div>
+            <div class="contact__container container grid"></div>   <!-- 聯絡表單 -->
              <form action="" class="contact__form grid" id="contact--form">
                <div class="contact__group grid">
-                  <input type="text" name="user_name" placeholder="Names" required class="contact__input">
-                  <input type="text" name="user_email" placeholder="Email" required class="contact__input">
+                  <input type="text" name="user_name" placeholder="Names" required class="contact__input">   <!-- 姓名輸入 -->
+                  <input type="text" name="user_email" placeholder="Email" required class="contact__input">   <!-- 電子郵件輸入 -->
                </div>
 
-               <textarea name="user_message" placeholder="Message" class="contact__input contact__area"></textarea>
+               <textarea name="user_message" placeholder="Message" class="contact__input contact__area"></textarea>  <!-- 訊息輸入 -->
 
-               <button type="submit" class="button contact__button">Send Message</button>
+               <button type="submit" class="button contact__button">Send Message</button>   <!-- 提交按鈕 -->
 
                <p class="contact__message" id="contact-message"></p>
              </form>
@@ -461,10 +470,10 @@
       <!--==================== FOOTER ====================-->
       <footer class="footer">
          <div class="footer__container container grid">
-            <div class="footer__content grid">
+            <div class="footer__content grid">  <!-- 網站 Logo -->
                <a href="#" class="footer__logo">CheN</a>
 
-               <ul class="footer__links">
+               <ul class="footer__links">  <!-- 連結 -->
                   <li>
                      <a href="#home" class="footer__link">Home</a>
                   </li>
@@ -479,7 +488,7 @@
                </ul>
             </div>
 
-            <div class="footer__social">
+            <div class="footer__social">   <!-- 社群媒體連結 -->
                <a href="https://reurl.cc/d1yEqD/" target="_blank" class="footer__social-link">
                   <i class="ri-facebook-circle-line"></i>
                </a>
@@ -494,21 +503,21 @@
             </div>
          </div>
 
-         <span class="footer__copy">
-            &#169; All Rights Reserved By Bedimcode
+         <span class="footer__copy">   <!-- 版權聲明 -->
+            &#169; All Rights Reserved By CheN
          </span>
       </footer>
 
-      <!--========== SCROLL UP ==========-->
+      <!--========== 回到頂部按鈕 ==========-->
       <a href="#" class="scrollup" id="scroll-up">
          <i class="ri-arrow-up-line"></i>
       </a>
 
 
-      <!--=============== SCROLLREVEAL ===============-->
+      <!--=============== 插件 ===============-->
       <script src="assets/js/scrollreveal.min.js"></script>
 
-      <!--=============== EMAIL JS ===============-->
+      <!--=============== EMAIL JS 插件 ===============-->
       <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
       <!--=============== MAIN JS ===============-->

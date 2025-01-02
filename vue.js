@@ -1,7 +1,7 @@
 const projects = Vue.createApp({
     data() {
       return {
-        projects: [], // 用於儲存從伺服器獲取的角色資料
+        projects: [], // 用於儲存從伺服器獲取資料
       };
     },
     mounted() {

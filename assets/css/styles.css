@@ -20,11 +20,11 @@
   --hue: 358; /* 色相 */
   --first-color: hsl(var(--hue), 80%, 49%); /* 主色 */
   --first-color-alt: hsl(var(--hue), 76%, 45%);/* 主色的替代色 */
-  --white-color: hsl(0, 0%, 98%);/* 白色 */
-  --black-color: hsl(0, 0%, 1%);/* 黑色 */
+  --white-color: hsl(0, 0%, 98%);
+  --black-color: hsl(0, 0%, 1%);
   --text-color: hsl(var(--hue), 2%, 66%);/* 文字顏色 */
   --body-color: hsl(var(--hue), 100%, 1%); /* 背景顏色 */
-  --container-color: hsl(var(--hue), 2%, 10%); /* 容器背景顏色 */
+  --container-color: hsl(var(--hue), 2%, 10%); 
   --conic-gradient: conic-gradient(from 150deg at 50% 45%, /* 漸層 */
                   hsl(var(--hue), 80%, 20%) 0deg,
                   hsl(var(--hue), 80%, 48%) 140deg,
@@ -39,29 +39,29 @@
   --h2-font-size: 1.25rem;  /* 標題2 */
   --h3-font-size: 1rem;  /* 標題3 */
   --normal-font-size: .938rem;  /* 內文字型大小 */
-  --small-font-size: .813rem;  /* 小字的型大小 */
-  --smaller-font-size: .75rem;  /* 更小的字型大小 */
+  --small-font-size: .813rem;  /* 小的型大小 */
+  --smaller-font-size: .75rem;  /* 最小的字型大小 */
 
   /*========== 字體粗細 ==========*/
-  --font-regular: 400;  /* 一般的字重 */
+  --font-regular: 400;  /* 一般的字 */
   --font-medium: 500;  /* 中等的字 */
   --font-semi-bold: 600;  /* 粗的字 */
 
   /*========== z index ==========*/
-  --z-tooltip: 10;  /* 提示框的層級 */
-  --z-fixed: 100;  /* 固定的層級 */
+  --z-tooltip: 10;  
+  --z-fixed: 100;  
 }
 
 /*========== 響應式 ==========*/
 @media screen and (min-width: 1168px) {
   :root {
-    --biggest-font-size: 3.5rem;  /* 最大的字型大小*/
-    --h1-font-size: 2.25rem;  /* 標題1字型大小 */
-    --h2-font-size: 1.5rem;  /* 標題2字型大小 */
-    --h3-font-size: 1.25rem;  /* 標題3字型大小 */
-    --normal-font-size: 1rem;  /* 正文字型大小 */
-    --small-font-size: .875rem;  /* 小字型大小 */
-    --smaller-font-size: .813rem;  /* 更小的字型大小 */
+    --biggest-font-size: 3.5rem;  /* 最大的字大小*/
+    --h1-font-size: 2.25rem;  /* 標題1字大小 */
+    --h2-font-size: 1.5rem;  /* 標題2 */
+    --h3-font-size: 1.25rem;  /* 標題3 */
+    --normal-font-size: 1rem;  /* 正文 */
+    --small-font-size: .875rem;  /* 小字 */
+    --smaller-font-size: .813rem;  /* 最小的字 */
   }
 }
 
@@ -102,7 +102,7 @@ h1, h2, h3, h4 {
 }
 
 ul {
-  list-style: none; /* 移除預設的列表樣式 */
+  list-style: none; 
 }
 
 a {
@@ -122,7 +122,7 @@ img {
 }
 
 .grid {
-  display: grid;  /* 網格布局 */
+  display: grid;  
   gap: 1.5rem;  /* 設定間距 */
 }
 
@@ -146,35 +146,35 @@ img {
 {
   position: fixed;  /* 固定在螢幕上 */
   bottom: 1.5rem;  /* 距離底部的距離 */
-  left: 0;  /* 靠左對齊 */
+  left: 0;  /* 靠左 */
   width: 0;
   background-color: hsla(0, 0%, 98%, .1);  /* 背景顏色帶透明效果 */
-  width: 88%;  /* 設定寬度 */
+  width: 88%;  
   margin-inline: auto;  /* 置中對齊 */
   backdrop-filter: blur(16px);  /* 模糊效果 */
   -webkit-backdrop-filter: blur(16px);  /* 適配 Webkit 的模糊效果 */
   padding: 1rem 2rem; 
   border-radius: 4rem;  /* 設定圓角 */
-  z-index: var(--z-fixed);  /* 層級控制 */
+  z-index: var(--z-fixed);  
 }
 
 .nav__list
 {
-  display: flex;  /* 彈性盒子布局 */
-  justify-content: space-between;  /* 平均分配空間 */
+  display: flex;  
+  justify-content: space-between;  
   align-items: center;  /* 垂直置中 */
 }
 
 .nav__link
 {
   width: 2.5rem;  /* 圓形的寬度 */
-  height: 2.5rem;  /* 高度 */
+  height: 2.5rem;  
   background-color: transparent;  /* 背景透明 */
-  color: var(--white-color);  /* 文字顏色 */
-  font-size: 1.5rem;  /* 文字大小 */
+  color: var(--white-color);  /* 顏色 */
+  font-size: 1.5rem;  /* 大小 */
   border-radius: 50%;  /* 圓形樣式 */
-  display: grid;  /* 使用網格布局 */
-  place-items: center;  /* 置中對齊內容 */
+  display: grid;  
+  place-items: center;  /* 置中 */
   transition: background-color .6s;  /* 背景的的顏色過渡 */
 }
 
@@ -188,30 +188,30 @@ img {
 /*===== PERFIL =====*/
 .perfil
 {
-  position: relative;  /* 相對定位，定位物件的位置 */
+  position: relative;  /* 相對位置 */
   background: var(--conic-gradient);  /* 背景設置為漸層 */
-  height: 415px;  /* 元素高度 */
+  height: 415px;  
   border-radius: 2rem;  /* 圓角 */
   padding: 1rem;  
-  display: grid;  /* 使用網格布局 */
+  display: grid;  
   overflow: hidden;  /* 隱藏超出的內容 */
 }
 
 .perfil__img
 {
-  width: 250px;  /* 設定圖片的寬度 */
+  width: 250px;  
   position: absolute;  /* 絕對位置 */
   justify-self: center;  /* 圖片水平置中 */
-  align-self: flex-end;   /* 圖片垂直對齊底部 */
+  align-self: flex-end;   /* 垂直對齊底部 */
 }
 
 .perfil__data
 {
   align-self: flex-end;  /* 將資料對齊底部 */
-  background-color: hsla(0, 0%, 1%, .1);  /* 背景帶透明效果 */
+  background-color: hsla(0, 0%, 1%, .1);  /* 背景透明 */
   backdrop-filter: blur(16px);  /* 背景模糊效果 */
   -webkit-backdrop-filter: blur(16px); 
-  padding: 1.5rem 1rem;  /* 內邊距設定 */
+  padding: 1.5rem 1rem;  /* 內邊距 */
   border-radius: 1.5rem;  /* 圓角 */
   border: 2px solid hsla(0, 0%, 100%, .5);  /* 半透明邊框 */
 }
@@ -224,9 +224,9 @@ img {
 
 .perfil__buttons
 {
-  display: grid;  /* 使用網格布局 */
-  column-gap: .5rem;  /* 列間距 */
-  grid-template-columns: repeat(2,1fr);  /* 設定兩排，平分 */
+  display: grid;  
+  column-gap: .5rem;  /* 間距 */
+  grid-template-columns: repeat(2,1fr);  
 }
 
 .perfil__buttons .button
@@ -245,10 +245,10 @@ img {
 
 .Info__circle
 {
-  width: 2rem;  /* 設定圓圈的寬度 */
-  height: 2rem;  /* 高度 */
+  width: 2rem;  
+  height: 2rem;  
   background-color: var(--first-color);  /* 圓圈背景顏色 */
-  border-radius: 50%; /* 圓形 */
+  border-radius: 50%; 
 }
 
 .Info__name
@@ -258,8 +258,8 @@ img {
 
 .Info__data
 {
-  display: flex;  /* 彈性布局 */
-  justify-content: center;  /* 水平置中 */
+  display: flex;  
+  justify-content: center;  /* 水平 */
   align-items: center;  /* 垂直置中 */
   column-gap: .5rem;  /* 間距 */
 }
@@ -267,16 +267,16 @@ img {
 .Info__image
 {
   background: var(--conic-gradient);  /* 設定漸層背景 */
-  height: 180px;  /* 高度設定 */
-  border-radius: 2rem;  /* 圓角設定 */
-  display: grid;  /* 使用網格布局 */
+  height: 180px;  
+  border-radius: 2rem;  /* 圓角 */
+  display: grid;  
   margin-block: 1.5rem;  /* 上下間距設定 */
   overflow: hidden;  /* 隱藏超出內容 */
 }
 
 .Info__img
 {
-  width: 140px;  /* 圖片寬度 */
+  width: 140px;  
   justify-self: center;  /* 水平置中 */
   align-self: flex-end;  /* 垂直對齊底部 */
 }
@@ -289,19 +289,19 @@ img {
 
 .Info .button
 {
-  width: 100%;  /* 按鈕寬度全寬 */
+  width: 100%;  /* 按鈕寬度 */
 }
 /*===== ABOUT =====*/
 .about__name
 {
-  font-size: var(--normal-font-size);  /* 名稱文字大小 */
-  font-weight: var(--font-regular);  /* 文字粗細 */
+  font-size: var(--normal-font-size);  /* 文字大小 */
+  font-weight: var(--font-regular);  /* 粗細 */
   margin-bottom: 1rem;  /* 與下方元素的間距 */
 }
 
 .about__social
 {
-  display: flex;  /* 彈性布局 */
+  display: flex;  
   justify-content: center;  /* 水平置中 */
   column-gap: 1.5rem;  /* 列間距 */
   margin-block: 2rem;  /* 上下間距 */
@@ -310,42 +310,42 @@ img {
 .about__link
 {
   width: 2.5rem;  /* 圓形寬度 */
-  height: 2.5rem;  /* 高度 */
+  height: 2.5rem;  
   background-color: var(--white-color);  /* 背景顏色 */
   color: var(--black-color);  /* 文字顏色 */
   font-size: 1.5rem;  /* 字體大小 */
   border-radius: 50%;  /* 圓形樣式 */
-  display: grid;  /* 使用網格布局 */
+  display: grid;  
   place-items: center;  /* 內容置中 */
   transition: background-color .4s, color .4s;   /* 顏色過渡效果 */
 }
 
 .about__link:hover
 {
-  background-color: var(--first-color); /* 滑鼠停下時，背景色會變為主色 */
-  color: var(--white-color);  /* 滑鼠停下時，文字會變為白色 */
+  background-color: var(--first-color); /* 滑鼠停下時，背景色會變色 */
+  color: var(--white-color);  /* 滑鼠停下時，文字會變色 */
 }
 
 .about__image
 {
   background: var(--conic-gradient);  /* 背景漸層 */
-  height: 180px;  /* 設定高度為 180 像素 */
+  height: 180px;  
   border-radius: 2rem;  /* 設定圓角半徑為 2rem */
-  display: grid;  /* 使用網格布局 */
+  display: grid;  
   overflow: hidden;  /* 超出區域的內容隱藏 */
 }
 
 .about__img
 {
-  width: 250px;  /* 圖片寬度為 250 像素 */
+  width: 250px;  
   justify-self: center;  /* 將圖片水平置中 */
-  transform: translateY(-2.5rem);  /* 將圖片向上移動 2.5rem */
+  transform: translateY(-2.5rem);  /* 圖片向上移動 2.5rem */
 }
 
 .about__note
 {
   font-size: var(--small-font-size);  /* 使用小字體大小 */
-  margin-block: 1rem 2rem;  /* 上下邊距分別為 1rem 和 2rem */
+  margin-block: 1rem 2rem;  /* 上下邊距 */
 } 
 
 .about .button
@@ -360,7 +360,7 @@ img {
 
 .skills__item
 {
-  width: 1.5rem;  /* 設定寬度為 1.5rem */
+  width: 1.5rem;  
   transition: transform .4s;  /* 轉換效果持續時間為 0.4 秒 */
 }
 
@@ -372,11 +372,11 @@ img {
 
 .skills__items
 {
-  display: flex;   /* 使用彈性盒布局 */
-  flex-wrap: wrap;  /* 換行排列 */
-  align-items: center;  /* 元素垂直置中 */
-  gap: 1.5rem;  /* 元素之間的間距為 1.5rem */
-  margin-block: 1.5rem;  /* 上下邊距為 1.5rem */
+  display: flex;   
+  flex-wrap: wrap;  /* 換行 */
+  align-items: center;  /* 垂直置中 */
+  gap: 1.5rem;  /* 間距 1.5rem */
+  margin-block: 1.5rem;  /* 上下邊距 1.5rem */
 }
 
 .skills__description
@@ -387,13 +387,13 @@ img {
 /*=============== BUTTON ===============*/
 .button
 {
-  display: inline-flex;  /* 使用內聯彈性盒布局 */
+  display: inline-flex;  
   justify-content: center;  /* 內容置中 */
   background-color: var(--first-color);  /* 背景色為主色 */
-  color: var(--white-color);  /* 文字顏色為白色 */
+  color: var(--white-color); 
   font-weight: var(--font-semi-bold);  /* 半粗體字重 */
-  padding: 1.25rem 2.5rem;  /* 內邊距為 1.25rem (上下) 和 2.5rem (左右) */
-  border-radius: 4rem;  /* 圓角半徑為 4rem */
+  padding: 1.25rem 2.5rem;  /* 內邊距 */
+  border-radius: 4rem;  /* 圓角半徑 */
   transition: background-color .4s;  /* 背景色轉換效果持續時間為 0.4 秒 */
 }
 
@@ -410,16 +410,16 @@ img {
 .projects__card
 {
   background-color: var(--container-color);  /* 背景色為容器色 */
-  padding: 1.5rem;  /* 內邊距為 1.5rem */
-  border-radius: 2rem;  /* 圓角半徑為 2rem */
+  padding: 1.5rem;  /* 內邊距 */
+  border-radius: 2rem;  /* 圓角半徑 */
 }
 
 .projects__image
 {
-  display: block;  /* 設為區塊元素 */
+  display: block;  
   overflow: hidden;  /* 超出區域的內容隱藏 */
-  border-radius: 1.5rem;  /* 圓角半徑為 1.5rem */
-  margin-bottom: 1.5rem;  /* 底部外邊距為 1.5rem */
+  border-radius: 1.5rem;  /* 圓角半徑 */
+  margin-bottom: 1.5rem;  /* 底部外邊距 */
 }
 
 .projects__img
@@ -430,18 +430,18 @@ img {
 .projects__name
 {
   font-size: var(--h3-font-size);  /* 使用 H3 字體大小 */
-  margin-bottom: .5rem;  /* 底部外邊距為 0.5rem */
+  margin-bottom: .5rem;  /* 底部外邊距 */
 }
 
 .projects__description
 {
-  color: var(--text-color);  /* 文字顏色為文本色 */
-  margin-bottom: 1.5rem;  /* 底部外邊距為 1.5rem */
+  color: var(--text-color);  /* 文字顏色 */
+  margin-bottom: 1.5rem;  /* 底部外邊距 */
 }
 
 .projects__skills
 {
-  width: 1rem;  /* 寬度為 1rem */
+  width: 1rem;  
   transition: transform .4s;  /* 轉換效果持續時間為 0.4 秒 */
 }
 
@@ -453,20 +453,20 @@ img {
 .projects__skills
 {
   width: max-content;  /* 寬度根據內容自適應 */
-  height: 34px;  /* 高度為 34 像素 */
+  height: 34px;  
   background-color: var(--black-color);  /* 背景色為黑色 */
-  padding-inline: .75rem;  /* 左右內邊距為 0.75rem */
-  display: flex;  /* 使用彈性盒布局 */
+  padding-inline: .75rem;  /* 左右內邊距 */
+  display: flex;  
   align-items: center;  /* 垂直置中對齊 */
-  column-gap: .75rem;  /* 子元素之間的水平間距為 0.75rem */
-  border-radius: 4rem;  /* 圓角半徑為 4rem */
-  margin-bottom: 1.5rem;  /* 底部外邊距為 1.5rem */
+  column-gap: .75rem;  
+  border-radius: 4rem;  /* 圓角半徑 */
+  margin-bottom: 1.5rem;  /* 底部外邊距 */
 }
 
 .projects__button
 {
   color: var(--white-color);  /* 文字顏色為白色 */
-  display: inline-flex;  /* 使用內聯彈性盒布局 */
+  display: inline-flex;  
   align-items: center;  /* 垂直置中對齊 */
   column-gap: .5rem;  /* 子元素之間的水平間距為 0.5rem */
   transition: color .4s;  /* 顏色轉換效果持續時間為 0.4 秒 */
@@ -496,7 +496,7 @@ img {
 .services__card
 {
   background-color: var(--container-color);  /* 背景色為容器色 */
-  padding: 4rem 1.5rem 3.5rem 1.5rem;  /* 上、右、下、左內邊距分別為 4rem、1.5rem、3.5rem、1.5rem */
+  padding: 4rem 1.5rem 3.5rem 1.5rem;  /* 內邊距 */
   border-radius: 2rem;  /* 圓角半徑為 2rem */
 }
 
@@ -509,17 +509,17 @@ img {
 
 .services__icon i
 {
-  font-size: 2.5rem;  /* 圖示字體大小為 2.5rem */
+  font-size: 2.5rem;  /* 圖示字體大小 */
   position: relative;  /* 設定相對定位 */
-  z-index: var(--z-tooltip);  /* 圖示層級位於工具提示上 */
+  z-index: var(--z-tooltip);  
 }
 
 .services__circle
 {
-  width: 3rem;  /* 寬度為 3rem */
-  height: 3rem;  /* 高度為 3rem */
+  width: 3rem;  
+  height: 3rem;  
   background-color: var(--first-color);  /* 背景色為主色 */
-  border-radius: 50%;  /* 設定為圓形 */
+  border-radius: 50%;  /* 圓形 */
   position: absolute;  /* 設定絕對定位 */
   top: -1rem;  /* 距離頂部 -1rem */
   right: -1rem;  /* 距離右側 -1rem */
@@ -545,13 +545,13 @@ img {
 /*=============== EXPERIENCE ===============*/
 .experience__container
 {
-  row-gap: 2rem;  /* 行間距為 2rem */
+  row-gap: 2rem;  /* 行間距 */
 }
 
 .experience__card
 {
-  display: grid;  /* 使用網格布局 */
-  row-gap: 1rem;  /* 行間距為 1rem */
+  display: grid;  
+  row-gap: 1rem;  /* 行間距 */
 }
 
 .experience__company
@@ -562,21 +562,21 @@ img {
 .experience__data
 {
   background-color: var(--container-color);  /* 背景色為容器色 */
-  padding: 1.5rem;  /* 內邊距為 1.5rem */
-  border-radius: 1.5rem;  /* 圓角半徑為 1.5rem */
+  padding: 1.5rem;  /* 內邊距 */
+  border-radius: 1.5rem;  /* 圓角半徑 */
 }
 
 .experience__profession
 {
   font-size: var(--h3-font-size);  /* 使用 H3 字體大小 */
-  margin-bottom: .5rem;  /* 底部外邊距為 0.5rem */
+  margin-bottom: .5rem;  /* 底部外邊距 */
 }
 
 .experience__date
 {
-  display: block;  /* 設為區塊元素 */
+  display: block;  
   font-size: var(--small-font-size);  /* 使用小字體大小 */
-  margin-bottom: 1rem;  /* 底部外邊距為 1rem */
+  margin-bottom: 1rem;  /* 底部外邊距 */
 }
 
 .experience__description
@@ -598,14 +598,14 @@ img {
 .contact__input
 {
   background-color: var(--container-color);  /* 背景色為容器色 */
-  padding: 1.25rem;  /* 內邊距為 1.25rem */
-  border-radius: 4rem;  /* 圓角半徑為 4rem */
+  padding: 1.25rem;  /* 內邊距 */
+  border-radius: 4rem;  /* 圓角 */
   color: var(--white-color);  /* 文字顏色為白色 */
 }
 
 .contact__input::placeholder
 {
-  color: var(--text-color);  /* 占位文字顏色為文本色 */
+  color: var(--text-color);  /* 文字顏色為文本色 */
 }
 
 .contact__input:autofill
@@ -615,34 +615,34 @@ img {
 
 .contact__area
 {
-  height: 10rem;  /* 高度為 10rem */
-  border-radius: 1.5rem;  /* 圓角半徑為 1.5rem */
+  height: 10rem;  
+  border-radius: 1.5rem;  /* 圓角半徑 */
   resize: none;  /* 禁止調整大小 */
 }
 
 .contact__button
 {
-  margin-top: 1.5rem;  /* 上邊距為 1.5rem */
+  margin-top: 1.5rem;  /* 上邊距 */
   cursor: pointer;  /* 設置鼠標樣式 */
 }
 
 .contact__message
 {
   position: absolute;  /* 設定絕對定位 */
-  left: 0;  /* 距離左側 0 */
-  bottom: 4.5rem;  /* 距離底部 4.5rem */
+  left: 0;  
+  bottom: 4.5rem;  /* 離底部 4.5rem */
   font-size: var(--small-font-size);  /* 字體大小為小字體 */
 }
 
 /*=============== FOOTER ===============*/
 .footer
 {
-  padding-block: 2rem 8rem;  /* 上下內邊距分別為 2rem 和 8rem */
+  padding-block: 2rem 8rem;  /* 上下內邊距 */
 }
 
 .footer__container
 {
-  row-gap: 2.5rem;  /* 行間距為 2.5rem */
+  row-gap: 2.5rem;  /* 行間距 */
 }
 
 .footer__logo
@@ -654,9 +654,9 @@ img {
 
 .footer__links
 {
-  display: flex;  /* 使用彈性盒布局 */
+  display: flex;  
   justify-content: center;  /* 水平置中對齊 */
-  column-gap: 2rem;  /* 子元素之間的水平間距為 2rem */
+  column-gap: 2rem;  /* 水平間距 */
 }
 
 .footer__link
@@ -672,51 +672,51 @@ img {
 
 .footer__social
 {
-  display: flex;  /* 使用彈性盒布局 */
+  display: flex;  
   justify-content: center;  /* 水平置中對齊 */
   column-gap: 1.5rem;  /* 物件之間的水平間距為 1.5rem */
 }
 
 .footer__social-link
 {
-  width: 2.5rem;  /* 寬度為 2.5rem */
-  height: 2.5rem;  /* 高度為 2.5rem */
+  width: 2.5rem;  
+  height: 2.5rem;  
   background-color: var(--first-color);  /* 背景色為主色 */
-  color: var(--white-color);  /* 文字顏色為白色 */
-  font-size: 1.5rem;  /* 字體大小為 1.5rem */
+  color: var(--white-color);  /* 文字白色 */
+  font-size: 1.5rem;  /* 字體大小 */
   border-radius: 50%;  /* 設為圓形 */
-  display: grid;  /* 使用網格布局 */
-  place-items: center;  /* 內容置中對齊 */
+  display: grid;  
+  place-items: center;  /* 置中 */
   transition: background .4s, color .4s;  /* 背景和文字顏色轉換持*/
 }
 
 .footer__social-link:hover
 {
-  background-color: var(--white-color);  /* 滑鼠停下，背景色變白色 */
-  color: var(--black-color);  /* 滑鼠停下，文字顏色變黑色 */
+  background-color: var(--white-color);  /* 滑鼠停下，背景變白色 */
+  color: var(--black-color);  /* 滑鼠停下，文字變黑色 */
 }
 
 .footer__copy
 {
   display: block;  /* 設為區塊 */
-  margin-top: 4.5rem;  /* 上邊距為 4.5rem */
-  text-align: center;  /* 文字置中對齊 */
+  margin-top: 4.5rem;  /* 上邊距 */
+  text-align: center;  /* 置中對齊 */
   font-size: var(--small-font-size);  /* 字體大小為小字體 */
-  color: var(--text-color);  /* 文字顏色為文本色 */
+  color: var(--text-color);  /* 文字顏色 */
 }
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar
 {
-  width: .6rem;  /* 捲軸的寬度為 0.6rem */
+  width: .6rem;  /* 捲軸的寬度 */
   background-color: hsl(0, 0%, 30%);  /* 捲軸背景色為深灰色 */
-  border-radius: .5rem;  /* 圓角半徑為 0.5rem */
+  border-radius: .5rem;  /* 圓角半徑 */
 }
 
 ::-webkit-scrollbar-thumb
 {
-  width: .6rem;  /* 寬度為 0.6rem */
+  width: .6rem;  
   background-color: hsl(0, 0%, 20%);  /* 背景色為更深的灰色 */
-  border-radius: .5rem;  /* 圓角半徑為 0.5rem */
+  border-radius: .5rem;  /* 圓角半徑 */
 }
 
 ::-webkit-scrollbar-thumb:hover
@@ -729,17 +729,17 @@ img {
 .scrollup
 {
   position: fixed;  /* 固定定位 */
-  right: 1rem;  /* 距右側 1rem */
-  bottom: 8rem;  /* 距底部 8rem */
+  right: 1rem;  /* 距右側  */
+  bottom: 8rem;  /* 距底部 */
   background-color: hsla(0, 0%, 98%, .1);  /* 半透明背景色 */
-  display: inline-flex;  /* 行內彈性盒布局 */
-  padding: 6px;  /* 內邊距為 6px */
+  display: inline-flex;  
+  padding: 6px;  /* 內邊距 */
   color: var(--white-color);  /* 按鈕顏色為白色 */
-  font-size: 1.25rem;  /* 字體大小為 1.25rem */
+  font-size: 1.25rem;  /* 字體大小 */
   backdrop-filter: blur(16px);  /* 背景模糊效果 */
   -webkit-backdrop-filter: blur(16px);  /* Webkit 專用背景模糊效果 */
   border-radius: .5rem;  /* 圓角半徑為 0.5rem */
-  z-index: var(--z-tooltip);  /* 層級為工具提示的 z-index */
+  z-index: var(--z-tooltip);  
   transition: bottom .4s, transform .4s;  /* 底部位置和變形效果的過渡時間為 0.4 秒 */
 }
 
@@ -763,12 +763,12 @@ img {
   }
 
   .container{
-    margin-inline: 1rem;  /* 左右邊距為 1rem */
+    margin-inline: 1rem;  /* 左右邊距 */
   }
 
   .nav
   {
-    padding: 1rem;  /* 導覽欄內邊距為 1rem */
+    padding: 1rem;  /* 導覽欄內邊距 */
   }
 }
   
@@ -779,7 +779,7 @@ img {
 {
   .main {
     overflow: hidden;  /* 隱藏超出範圍的內容 */
-    margin-top: 50%;  /* 上邊距設定為 50% */
+    margin-top: 50%;  /* 上邊距設定 */
   }
 
   .nav{
@@ -788,7 +788,7 @@ img {
 
   .nav__list
   {
-    column-gap: 1.25rem;  /* 導覽清單子項目之間的間距為 1.25rem */
+    column-gap: 1.25rem;  /* 導覽清單子項目之間的間距 */
   }
 
   .home__container,
@@ -797,7 +797,7 @@ img {
   .contact__container,
   .experience__container
   {
-    grid-template-columns: 380px;  /* 單欄寬度為 380px */
+    grid-template-columns: 380px;  /* 單欄寬度 */
     justify-content: center;  /* 水平置中 */
   }
 }
@@ -806,7 +806,7 @@ img {
 {
   .main {
     overflow: hidden;  /* 隱藏超出範圍的內容 */
-    margin-top: 80%;  /* 上邊距設定為 80% */
+    margin-top: 80%;  /* 上邊距設定 */
   }
 
   .home__container
@@ -817,7 +817,7 @@ img {
 
   .perfil
   {
-    height: 100%;  /* 高度占滿 */
+    height: 100%;  
   }
 
   .projects__container,
@@ -828,7 +828,7 @@ img {
 
   .experience__container
   {
-    grid-template-columns: initial;  /* 保持初始欄布局 */
+    grid-template-columns: initial;  /* 保持初始布局 */
   }
   .experience__card
   {
@@ -845,12 +845,12 @@ img {
 
   .footer__container
   {
-    justify-content: space-between;  /* 子項目左右對齊 */
+    justify-content: space-between;  /* 左右對齊 */
   }
 
   .footer__content
   {
-    column-gap: 4.5rem;  /* 子項目之間的間距為 4.5rem */
+    column-gap: 4.5rem;  /* 間距 */
   }
 
   .show-scroll
@@ -876,7 +876,7 @@ img {
 
   .section
   {
-    padding-block: 3rem 4rem;  /* 上下內邊距分別為 3rem 和 4rem */
+    padding-block: 3rem 4rem;  /* 上下內邊距 */
   }
 
   .section__title
@@ -895,19 +895,19 @@ img {
   {
     grid-column: 2 / 3;  /* 占用第 2 欄 */
     grid-row: 1 / 3;  /* 占用第 1 到第 3 行 */
-    padding: 2rem;  /* 內邊距為 2rem */
+    padding: 2rem;  /* 內邊距 */
   }
 
   .perfil__img
   {
-    width: 450px;  /* 圖片寬度為 450px */
+    width: 450px;  
   }
 
   .perfil__data
   {
     width: 370px;  /* 資訊區域寬度為 370px */
-    padding: 1.5rem;  /* 內邊距為 1.5rem */
-    border-radius: 2rem;  /* 圓角半徑為 2rem */
+    padding: 1.5rem;  /* 內邊距 */
+    border-radius: 2rem;  /* 半徑 */
   }
 
   .info
@@ -952,46 +952,46 @@ img {
   .projects__container
   {
     grid-template-columns: repeat(3, 368px);  /* 定義三欄，寬度為 368px */
-    gap: 2rem ;  /* 每欄間距為 2rem */
+    gap: 2rem ;  /* 間距 */
   }
 
   .projects__card
   {
-    padding-bottom: 2rem;  /* 卡片底部內邊距為 2rem */
+    padding-bottom: 2rem;  /* 卡片底部內邊距 */
   }
 
   .services__container
   {
     grid-template-columns: repeat(3, 368px);  /* 定義三欄，寬度為 368px */
-    gap: 2rem;  /* 每欄間距為 2rem */
+    gap: 2rem;  /* 間距 */
   }
   .services__card
   {
-    padding-block: 6rem 5rem;  /* 上下內邊距分別為 6rem 和 5rem */
+    padding-block: 6rem 5rem;  /* 上下內邊距 */
   }
 
   .services__icon i
   {
-    font-size: 3.5rem; /* 標字體大小為 3.5rem */
+    font-size: 3.5rem; /* 標字體 */
   }
 
   .services__circle
   {
-    width: 4rem;  /* 圓圈寬度為 4rem */
-    height: 4rem;  /* 圓圈高度為 4rem */
-    right: -1.5rem;  /* 圓圈距右側 -1.5rem */
-    top:-1.5rem  /* 圓圈距頂部 -1.5rem */
+    width: 4rem;  
+    height: 4rem;  
+    right: -1.5rem;  /* 圓圈距右側*/
+    top:-1.5rem  /* 圓圈距頂部 */
   }
 
   .experience__container
   {
-    row-gap: 4rem;  /* 行間距為 4rem */
+    row-gap: 4rem;  /* 間距 */
   }
   
   .experience__card
   {
     grid-template-columns: 350px 510px;  /* 設定兩欄，寬度分別為 350px 和 510px */
-    column-gap: 8rem;  /* 列間距為 8rem */
+    column-gap: 8rem;  /* 間距 */
   }
 
   .experience__company
@@ -1001,8 +1001,8 @@ img {
 
   .experience__data
   {
-    padding: 2rem;   /* 設置內邊距為 2rem */
-    border-radius: 2rem;   /* 設置圓角為 2rem */
+    padding: 2rem;   /* 內邊距 */
+    border-radius: 2rem;   /* 圓角 */
   }
 
   .contact__container
@@ -1017,7 +1017,7 @@ img {
 
   .contact__area
   {
-    height: 15rem;   /* 設置高度為 15rem */
+    height: 15rem;   
   }
 
   .contact__button
@@ -1028,7 +1028,7 @@ img {
 
   .footer
   {
-    padding-top: 3rem;   /* 設置上內邊距為 3rem */
+    padding-top: 3rem;   /* 上內邊距 */
   }
 
   .footer__links
@@ -1038,7 +1038,7 @@ img {
 
   .footer__copy
   {
-    margin-top: 7rem;   /* 設置頂部邊距為 7rem */
+    margin-top: 7rem;   /* 頂部邊距 */
   }
 }
 
@@ -1048,15 +1048,15 @@ img {
 {
   .main {
     overflow: hidden;     /* 隱藏超出範圍的內容 */
-    margin-top: 50%;     /* 設置頂部邊距為 50% */
+    margin-top: 50%;     /* 頂部邊距 */
   }
 
   .nav
   {
     width: max-content;   /* 自動調整寬高以適配內容 */
     height: max-content;
-    padding: 2rem 1rem;  /* 設置上下內邊距 2rem，左右 1rem */
-    left: initial;  /* 固定導航欄位置在右側，距離右側 3rem */
+    padding: 2rem 1rem;  /* 上下內邊距 */
+    left: initial;  /* 固定導航欄位置在右側 */
     right: 3rem;
     top: 0;
     bottom: 0;
@@ -1066,30 +1066,30 @@ img {
   .nav__list
   {
     flex-direction: column;   /* 將導航列改為垂直排列 */
-    row-gap: 1.25rem;   /* 設置垂直間距為 1.25rem */
+    row-gap: 1.25rem;   /* 垂直間距 */
   }
 
   .footer
   {
-    padding-block: 3rem;   /* 上下內邊距設為 3rem */
+    padding-block: 3rem;   /* 上下內邊距 */
   }
 
   .scrollup
   {
-    right: 4rem;   /* 向右偏移距離為 4rem */
+    right: 4rem;   /* 向右偏移 */
   }
 }
 
 .gallary
 {
-  width: 100%;   /* 設置寬度為 100% */
-  height: calc(100vh - 60px);   /* 設置高度為螢幕高度減去 60px */
+  width: 100%;   
+  height: calc(100vh - 60px);   /* 設置高度為螢幕高度減 60px */
   position: relative;   /* 設置相對定位 */
 }
 
 .img
 {
-  width: 75px;   /* 設置圖片容器寬度為 75px，高度為 100px */
+  width: 75px;   
   height: 100px;
   overflow: hidden;  /* 隱藏超出範圍的內容 */
   position: absolute;   /* 設置絕對定位 */
@@ -1099,7 +1099,7 @@ img {
 
 .img img
 {
-  width: 100%;   /* 圖片寬高設定為父容器的 100% */
+  width: 100%;   
   height: 100%;
   object-fit: cover;   /* 保持圖片比例裁切 */
 }
@@ -1110,12 +1110,12 @@ img {
   .main 
   {
     overflow: hidden;    /* 隱藏超出範圍的內容 */
-    margin-top: 215%;    /* 設置頂部邊距為 215% */
+    margin-top: 215%;    /* 頂部邊距 */
   }
 
   .img img
   {
-  width: 200px;   /* 調整圖片大小為 200px */
+  width: 200px;   
   height: 200px;
   object-fit: cover;   /* 保持圖片比例裁切 */
   display: block;   /* 改為塊級元素顯示，並使用 Flexbox 排列 */
@@ -1126,7 +1126,7 @@ img {
 
   .img
   {
-  width: 75px;   /* 圖片容器寬高保持為 75px 和 100px */
+  width: 75px;   
   height: 100px;
   overflow: hidden;   /* 隱藏超出範圍的內容 */
   position: absolute;
