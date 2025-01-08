@@ -19,7 +19,7 @@
   */
   --hue: 358; /* 色相 */
   --first-color: hsl(var(--hue), 80%, 49%); /* 主色 */
-  --first-color-alt: hsl(var(--hue), 76%, 45%);/* 主色的替代色 */
+  --first-color-alt: hsl(var(--hue), 76%, 45%);/* 主色的替代 */
   --white-color: hsl(0, 0%, 98%);
   --black-color: hsl(0, 0%, 1%);
   --text-color: hsl(var(--hue), 2%, 66%);/* 文字顏色 */

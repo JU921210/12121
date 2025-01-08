@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== FAVICON ===============-->
+      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="css/styles.css">
+      <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+      <title> Chen JU </title> <!-- 標題 -->
+       
+   </head>
+   <style>
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+.img {
+   position: fixed; /* 固定定位，參考視窗 */
+  top: calc(50% + 250px); /* 比正中略低，調整數值可微調位置 */
+  left: 50%;
+  transform: translate(-50%, -50%) scale(3); /* 對齊中心並縮小 */
+  opacity: 0; /* 初始不可見 */
+}
+
+   </style>
+   <body>
+         
+      <div class="gallery trigger-section">
+         <div class="img">
+            <img src="/img/17.jpg" alt="17" />
+         </div>
+
+         <div class="img">
+            <img src="/img/2.jpg" alt="2" />
+         </div>
+
+         <div class="img">
+            <img src="/img/3.jpg" alt="3" />
+         </div>
+
+         <div class="img">
+            <img src="/img/4.jpg" alt="4" />
+         </div>
+
+         <div class="img">
+            <img src="/img/5.jpg" alt="5" />
+         </div>
+
+         <div class="img">
+            <img src="/img/6.jpg" alt="6" />
+         </div>
+
+         <div class="img">
+            <img src="/img/7.jpg" alt="7" />
+         </div>
+
+         <div class="img">
+            <img src="/img/8.jpg" alt="8" />
+         </div>
+
+         <div class="img">
+            <img src="/img/9.jpg" alt="9" />
+         </div>
+
+         <div class="img">
+            <img src="/img/10.jpg" alt="10" />
+         </div>
+
+         <div class="img">
+            <img src="/img/16.jpg" alt="16" />
+         </div>
+
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+      <script>
+  document.addEventListener("DOMContentLoaded", function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const images = document.querySelectorAll('.img');
+
+  // 你可以根據需要自定義每張圖片的位置
+  const positions = [
+    { x: 100, y: 50 },   // 第一張圖片的 x 和 y
+    { x: -150, y: 200 },  // 第二張圖片的 x 和 y
+    { x: 300, y: -100 },  // 第三張圖片的 x 和 y
+    { x: -200, y: -50 },  // 第四張圖片的 x 和 y
+    { x: 250, y: 150 },   // 第五張圖片的 x 和 y
+    { x: -100, y: -200 }, // 第六張圖片的 x 和 y
+    { x: 150, y: 250 },   // 第七張圖片的 x 和 y
+    { x: -50, y: 100 },   // 第八張圖片的 x 和 y
+    { x: 200, y: 0 },     // 第九張圖片的 x 和 y
+    { x: -300, y: 50 },   // 第十張圖片的 x 和 y
+    { x: 0, y: -100 },    // 第十一張圖片的 x 和 y
+  ];
+
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".trigger-section",
+      start: "top top",
+      end: "+=1000",
+      pin: true,
+      scrub: true,
+    },
+  });
+
+  // 進場動畫（圖片從中心出現）
+  timeline.to(images, {
+    opacity: 1,
+    scale: 1, // 恢復到正常大小
+    stagger: 0.3, // 每張圖片依次出現
+    duration: 1,
+  });
+
+  // 分散動畫（使用指定位置）
+  timeline.to(images, {
+    x: (i) => positions[i]?.x || 0,  // 使用位置數組中的 x 值
+    y: (i) => positions[i]?.y || 0,  // 使用位置數組中的 y 值
+    opacity: 1,
+    rotation: 360, // 自轉
+    scale: 1.5, // 統一放大到 1.5 倍
+    duration: 2,
+    stagger: 0.2,
+  });
+});
+
+      </script>
+      <!--==================== MAIN ====================-->
+      <main class="main">
+         <!--==================== 首頁 ====================-->
+         <section class="home__section" id="home">
+            <div class="home__container container grid" style="margin-top: 200px;">
+               <!--===== 個人檔案 =====-->
+               <div class="perfil">  <!-- 照片 -->
+                  <img src="/img/20210101_215647.jpg" alt="image" class="perfil__img">
+
+                  <div class="perfil__data">  <!-- 姓名 -->
+                     <h1 class="perfil__name">Chen <br> JU</h1>
+
+                     <div class="perfil__buttons">  <!-- 按鈕 -->
+                        <a href="#projects" class="button">Projects</a>
+                        <a href="#services" class="button button__black">Services</a>
+                     </div>
+                  </div>
+               </div>
+
+               <!--===== 個人資訊 =====-->
+               <div class="Info">
+                  <div class="Info__data">
+                     <h1 class="Info__name">Chen JU</h1>
+                  </div>
+
+                  <div class="Info__iamge">
+                     <img src="/img/20210101_215647.jpg" alt="image" class="Info__img">
+                  </div>
+
+                  <p class="Info__description">
+                     
+                  </p>
+
+                  <a href="" download target="_blank" class="button button__black">Download CV</a>
+               </div>   <!-- 下載履歷表 -->
+
+               <!--===== ABOUT =====-->
+               <div class="about">
+                  <h3 class="about__name">
+                     Chen JU - <b>網頁設計者 & 作品集</b>
+                  </h3>
+
+                  <p class="about__description">  <!-- 簡介 -->
+                     當我在追尋著我的夢想時，每一天都是繽紛的，因為我知道每個小時都是在實現夢想的一部分。
+                  </p>
+
+                  <div class="about__social">   <!-- 社交媒體連結 -->
+                     <a href="https://www.linkedin.com/" target="_blank" class="about__link">
+                        <i class="ri-linkedin-box-line"></i>
+                     </a>
+
+                     <a href="https://github.com/" target="_blank" class="about__link">
+                        <i class="ri-github-line"></i>
+                     </a>
+
+                     <a href="https://www.behance.net/" target="_blank" class="about__link">
+                        <i class="ri-behance-line"></i>
+                     </a>
+                  </div>
+
+                  <div class="about__image">
+                     <img src="/img/20210101_215647.jpg" alt="image" class="about__img">
+                  </div>
+
+                  <p class="about__note">
+                    
+                  </p>
+
+                  <a href="#contact" class="button">Contact Me</a>
+               </div>  <!-- 聯絡按鈕 -->
+
+               <!--===== SKILLS =====-->
+               <div class="skills">
+                  <h2 class="skills__title">擅長程式</h2>
+
+                  <div class="skills__items">
+                     <img src="/img/ps.png" alt="image" class="skills__item">
+                     <img src="/img/PR.png" alt="image" class="skills__item">
+                     <img src="/img/PT.png" alt="image" class="skills__item">
+                     <img src="/img/AI.png" alt="image" class="skills__item">
+                     <img src="/img/ACID.png" alt="image" class="skills__item">
+                     <img src="/img/skills-github.svg" alt="image" class="skills__item">
+                     <img src="/img/ID.png" alt="image" class="skills__item">
+                     <img src="/img/skills-tailwind-css.svg" alt="image" class="skills__item">
+                     <img src="/img/skills-figma.svg" alt="image" class="skills__item">
+                     <img src="/img/MYAY.png" alt="image" class="skills__item">
+                  </div>
+
+                  <p class="skills__description">
+                     
+                  </p>
+               </div>
+            </div>
+         </section>
+
+         <!--==================== PROJECTS ====================-->
+         <section class="projects section" id="projects">
+            <h2 class="section__title">Portfolio</h2> <!-- 標題 -->
+        
+            <div class="projects__container container grid">   <!-- 使用 Vue.js 動態生成 -->
+              <article
+                v-for="(project, index) in projects"
+                :key="index"
+                class="projects__card"
+              >
+                <a :href="project.link" target="_blank" class="projects__image">
+                  <img :src="project.image" :alt="project.name" class="projects__img" />
+                </a>   <!-- 專案和圖片 -->
+        
+                <div class="projects__data">
+                  <h3 class="projects__name">{{ project.name }}</h3>
+                  <p class="projects__description">
+                    {{ project.description }}   <!-- 描述 -->
+                  </p>
+        
+                  <div class="projects__skills">  <!-- 技能 -->
+                    <img
+                      v-for="(skill, skillIndex) in project.skills"
+                      :key="skillIndex"
+                      :src="skill"
+                      :alt="`Skill ${skillIndex + 1}`"
+                      class="projects__skills"
+                    />
+                  </div>
+                       <!-- 專案連結按鈕 -->
+                  <a
+                    :href="project.link"
+                    target="_blank"
+                    class="projects__button"
+                  >
+                    <i class="ri-link"></i>
+                    <span>Visit Project</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+         <!--==================== SERVICES ====================-->
+         <section class="services section" id="services">
+            <h2 class="section__title">SERVICES I OFFER</h2> <!-- 標題 -->
+
+            <div class="services__container container grid">
+               <article class="services__card">
+                  <div class="services__icon">
+                     <div class="services__circle"></div>
+                     <i class="ri-code-box-line"></i>
+                  </div>
+
+                  <h3 class="services__name">手繪</h3>
+                  <p class="services__description">
+                     透過鉛筆、麥克筆、色鉛筆等媒材表現創意。注重細節與構圖，將情感與靈感融入作品中，讓每一幅畫作都充滿個人特色與生命力。
+                  </p>
+               </article>
+
+               <article class="services__card">
+                  <div class="services__icon">
+                     <div class="services__circle"></div>
+                     <i class="ri-pen-nib-line"></i>
+                  </div>
+
+                  <h3 class="services__name">電繪</h3>
+                  <p class="services__description">
+                     擅長角色設計、插畫及場景創作，熟悉繪圖軟體如Photoshop，能結合創意與技術，創造細緻且富有故事性的作品，呈現最佳視覺效果。
+                  </p>
+               </article>
+
+               <article class="services__card">
+                  <div class="services__icon">
+                     <div class="services__circle"></div>
+                     <i class="ri-seo-line"></i>
+                  </div>
+
+                  <h3 class="services__name">手作</h3>
+                  <p class="services__description">
+                     我熱愛手作創作，喜歡編織、繪製球鞋等多元材質設計手工製品，從無到有的過程充滿成就感。致力於打造兼具實用性與美感的作品。
+                  </p>
+               </article>
+            </div>
+         </section>
+
+         <!--==================== EXPERIENCE ====================-->
+         <section class="experience section" id="experience">
+            <h2 class="section__title">Competition Experience</h2> <!-- 標題 -->
+
+            <div class="experience__container container grid">
+               <article class="experience__card">
+                  <h2 class="experience__company">桃園設計獎</h2>
+
+                  <div class="experience__data">
+                     <h3 class="experience__profession">平面設計組 金獎</h3>
+                     <span class="experience__date">2021/4/25</span>
+                     <p class="experience__desrciption">
+                        過程中不僅提升了創作能力還提升了團隊合作的技巧，累積了豐富的經驗，使我開拓視野，也更加了解自己的潛力與努力方向。
+                     </p>
+                  </div>
+               </article>
+
+               <article class="experience__card">
+                  <h2 class="experience__company">韓國設計獎 </h2>
+
+                  <div class="experience__data">
+                     <h3 class="experience__profession">平面設計組-入圍</h3>
+                     <span class="experience__date">2022/1/20</span>
+                     <p class="experience__desrciption">
+                        藉由這次經驗了解除了奮發圖強的精神，若沒有理性的分析自己的優劣勢，仍然無法使自身的能力與日俱進。
+                     </p>
+                  </div>
+               </article>
+
+               <article class="experience__card">
+                  <h2 class="experience__company">全國創遊翻轉嘉年華</h2>
+
+                  <div class="experience__data">
+                     <h3 class="experience__profession">特優</h3>
+                     <span class="experience__date">2021/9/30</span>
+                     <p class="experience__desrciption">
+                        參加競賽的過程中，學習到了許
+                        多創作能力累積了很多實務經驗，與
+                        全國的選手們競爭，領悟到了人外有
+                        人、天外有天，也展開自己的眼界
+                     </p>
+                  </div>
+               </article>
+            </div>
+         </section>
+
+         <!--==================== CONTACT ====================-->
+         <section class="contact section" id="contact">
+            <h2 class="section__title">CONTACT ME</h2>
+
+            <div class="contact__container container grid"></div>   <!-- 聯絡表單 -->
+             <form action="" class="contact__form grid" id="contact--form">
+               <div class="contact__group grid">
+                  <input type="text" name="user_name" placeholder="Names" required class="contact__input">   <!-- 姓名輸入 -->
+                  <input type="text" name="user_email" placeholder="Email" required class="contact__input">   <!-- 電子郵件輸入 -->
+               </div>
+
+               <textarea name="user_message" placeholder="Message" class="contact__input contact__area"></textarea>  <!-- 訊息輸入 -->
+
+               <button type="submit" class="button contact__button">Send Message</button>   <!-- 提交按鈕 -->
+
+               <p class="contact__message" id="contact-message"></p>
+             </form>
+         </section>
+      </main>
+
+      <!--==================== FOOTER ====================-->
+      <footer class="footer">
+         <div class="footer__container container grid">
+            <div class="footer__content grid">  <!-- Logo -->
+               <a href="#" class="footer__logo">CheN</a>
+
+               <ul class="footer__links">  <!-- 連結 -->
+                  <li>
+                     <a href="#home" class="footer__link">Home</a>
+                  </li>
+
+                  <li>
+                     <a href="#projects" class="footer__link">Projects</a>
+                  </li>
+
+                  <li>
+                     <a href="#services" class="footer__link">Services</a>
+                  </li>
+               </ul>
+            </div>
+
+            <div class="footer__social">   <!-- 社群媒體連結 -->
+               <a href="https://reurl.cc/d1yEqD/" target="_blank" class="footer__social-link">
+                  <i class="ri-facebook-circle-line"></i>
+               </a>
+
+               <a href="https://reurl.cc/G5p9Gv/" target="_blank" class="footer__social-link">
+                  <i class="ri-instagram-line"></i>
+               </a>
+
+               <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                  <i class="ri-twitter-x-line"></i>
+               </a>
+            </div>
+         </div>
+
+         <span class="footer__copy">   <!-- 版權聲明 -->
+            &#169; All Rights Reserved By CheN
+         </span>
+      </footer>
+
+      <!--========== 回到頂部按鈕 ==========-->
+      <a href="#" class="scrollup" id="scroll-up">
+         <i class="ri-arrow-up-line"></i>
+      </a>
+
+
+      <!--=============== 插件 ===============-->
+      <script src="assets/js/scrollreveal.min.js"></script>
+
+      <!--=============== EMAIL JS 插件 ===============-->
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script src="/js/vue.js" ></script>
+   </body>
+</html>
